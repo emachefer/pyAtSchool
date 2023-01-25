@@ -1,4 +1,15 @@
 #! /bin/python
+"""Configuration électronique
+
+Script permettant de déterminer la configuration électronique
+d'un atome en fonction de son numéro atomique.
+
+@author:  E. Machefer <evan.machefer@ac-dijon.fr>
+@project: pyAtSchool  <https://github.com/emachefer/pyAtSchool>
+@license: GPL-3.0
+"""
+
+
 # Nombre maximum d'électrons par sous couche
 NB_MAX_E = {"1s": 2, "2s": 2, "2p": 6, "3s": 2, "3p": 6}
 

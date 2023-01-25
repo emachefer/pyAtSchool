@@ -1,7 +1,15 @@
 #! /bin/python3
-"""
+"""Coordonnées géocentriques
+
+Script simulant l'orbite de la planète Mars dans le référentiel
+géocentrique.
+
 Dans cette simuation, on considère une orbite circulaire autour du
 Soleil.
+
+@author:  E. Machefer <evan.machefer@ac-dijon.fr>
+@project: pyAtSchool  <https://github.com/emachefer/pyAtSchool>
+@license: GPL-3.0
 """
 
 from matplotlib import pyplot as plt
