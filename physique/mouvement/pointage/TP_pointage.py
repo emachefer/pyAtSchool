@@ -43,8 +43,7 @@ def vitesse(x, y):
 
 ### TODO : appeler la fonction pour tracer y en fonction de t
 
-### TODO : modifier la fonction vitesse au niveau des TODO
-
+### TODO : modifier la fonction vitesse au niveau des TODO (lignes 28 et 30)
 ### TODO : appeler la fonction pour tracer les vitesses
 
 
