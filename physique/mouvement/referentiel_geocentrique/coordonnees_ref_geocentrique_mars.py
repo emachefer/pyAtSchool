@@ -58,7 +58,7 @@ if (str(input("Faire l'animation ? [O/N] ")).upper() == "N"):
     xMg = [xM[i] - xT[i] for i in range(len(aT))]
     yMg = [yM[i] - yT[i] for i in range(len(aT))]
     plt.plot(xMg, yMg, 'r')
-    ax.set_title(f"Trajectoire de Mars dans le référentiel géocentrique ({nb_annees} ans)")
+    ax.title(f"Trajectoire de Mars dans le référentiel géocentrique ({nb_annees} ans)")
 else:
     xMg = []
     yMg = []

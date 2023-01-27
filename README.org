@@ -1,7 +1,10 @@
 * pyAtSchool
 
-  Dépôt de ressources python pour les classes de lycée.
+Dépôt de ressources python pour les classes de lycée.
 
 * FAQ
 ** Comment participer ?
-   Créer une [[https://github.com/emachefer/pyAtSchool/issues][issue]].
+Créer une [[https://github.com/emachefer/pyAtSchool/issues][issue]].
+
+
+
