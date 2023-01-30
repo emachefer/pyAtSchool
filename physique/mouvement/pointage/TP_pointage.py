@@ -41,7 +41,8 @@ def vitesse(x, y):
 #### Pour une aide sur une fonction s'appelant FONCTION, dans la console écrire : help(FONCTION)
 ### TODO : coller le résultat du pointage t, x et y
 
-### TODO : appeler la fonction pour tracer y en fonction de t
+### TODO : Lire les fonctions définies au dessus
+### TODO : appeler la fonction pour tracer y en fonction de x
 
 ### TODO : modifier la fonction vitesse au niveau des TODO (lignes 28 et 30)
 ### TODO : appeler la fonction pour tracer les vitesses
