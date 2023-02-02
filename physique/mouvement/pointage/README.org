@@ -1,0 +1,54 @@
+* Exemple de TP correspondant
+  Niveau seconde
+** TP : Étude de la vitesse
+
+*** Définitions
+    #+begin_definition
+    Soit les positions successives M_i occupées par un point M à
+    l'instant t_i.  La vitesse au point M_i est définie par le rapport
+    entre la distance séparant les points M_{i} et M_{i+1} et
+    l'intervalle de temps séparant ces deux instants[fn::ou durée]
+    #+begin_center
+    $\vec{v}(t_i) = \dfrac{\overrightarrow{M_{i}M_{i+1}}}{t_{i+1} - t_{i}}$
+    #+end_center
+    la vitesse est suivant l'axe des /x/ et celle des /y/, soit
+    #+begin_center
+    $v_x(t_i) = \dfrac{x_{i+1} - x_{i}}{t_{i+1} - t_{i}}$
+
+    $v_y(t_i) = \dfrac{y_{i+1} - y_{i}}{t_{i+1} - t_{i}}$
+    #+end_center
+    #+end_definition
+
+    #+begin_doc
+    #+begin_src python :exports code
+    # Soit la liste lst suivante
+    lst = [1, 2, 3, 4, 5]
+    # Pour accéder à l'élément i de la lst
+    lst[i]
+    #+end_src
+    #+end_doc
+
+*** Protocole
+    # + Représenter les positions successives d’un système modélisé
+    # par un point lors d’une évolution unidimensionnelle ou
+    # bidimensionnelle à l’aide d’un langage de programmation
+
+    # + Représenter des vecteurs vitesse d’un système modélisé par
+    # un point lors d’un mouvement à l’aide d’un langage de
+    # programmation.
+
+    1. Télécharger la vidéo [[https://assets.lls.fr/pages/6225739/PC2-11-Act1-Trotinette.mp4][suivante]]
+    2. Ouvrez la page web [[https://www.eleves.online/MecaChrono/index.php][MecaChrono]]
+       1. Cliquer sur l'icône caméra pour ouvrir le fichier
+       2. Changer le nombre d'images entre deux échantillonnages
+	  à *2*
+       3. Cliquer sur l'icône règle, puis cliquer sur le bas
+	  du mètre et glisser jusqu'en haut
+       4. Lire la vidéo une première fois
+       5. Revenir en arrière pour aller juste à l'instant du lâché
+       6. Cliquer sur la balle jusqu'à ce qu'elle atteigne le sol
+       7. Cliquer sur l'onglet "Tableau de valeurs"
+       8. Copier les données sous le format python
+    3. Copier ou télécharger le code à cette [[https://raw.githubusercontent.com/emachefer/pyAtSchool/main/physique/mouvement/pointage/TP_pointage.py][adresse]], puis répondre
+       aux questions dans le code.
+    4. Comment peut-on qualifier le mouvement ?
