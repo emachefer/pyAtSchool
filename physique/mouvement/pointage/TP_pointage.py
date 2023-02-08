@@ -1,3 +1,13 @@
+"""Pointage
+
+Script permettant d'étudier le résultat d'un pointage vidéo.
+
+@author:  E. Machefer <evan.machefer@ac-dijon.fr>
+@project: pyAtSchool  <https://github.com/emachefer/pyAtSchool>
+@license: GPL-3.0
+
+"""
+
 ##################################################
 ########## NE PAS TOUCHER (voir ligne 40) ########
 ##################################################
