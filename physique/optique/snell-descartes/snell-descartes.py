@@ -13,7 +13,7 @@ def tellme(s):
     plt.title(s, fontsize=16)
     plt.draw()
 
-
+l = 5 # longueur du faisceau
 n1 = float(input("n1 = "))
 n2 = float(input("n2 = "))
 
@@ -26,12 +26,8 @@ plt.ylim(-1, 1)
 
 # Modifie la couleur pour la partie basse
 plt.fill_between([-1,1], -1, color="#03A9EE")
+# Trace la normale
 plt.arrow(0,-1,0,2, color="gray", linestyle="dashed")
-
-tellme('Réfraction de la lumière (cliquer pour commencer)')
-
-plt.waitforbuttonpress()
-l = 5
 
 while True:
     tellme("Sélectionner la position de la source")
@@ -49,8 +45,11 @@ while True:
 
     tellme('θi = {:.2f} ; θr = {:.2f}'.format(to_deg(θi), to_deg(θr)))
 
-    ri = plt.arrow(0, 0, l*x, l*y, color='r')
-    rr = plt.arrow(0, 0, -l*sin(θr), -l*cos(θr), color='g')
+    ri = plt.arrow(0, 0, l*x, l*y, color='r', label="Rayon incident")
+    rr = plt.arrow(0, 0, -l*sin(θr), -l*cos(θr), color='g', label="Rayon réfracté")
+    rx = plt.arrow(0,0, -l*x, l*y, color='b', label="Rayon réfléchi")
+
+    ax.legend()
 
     if plt.waitforbuttonpress():
         break
@@ -58,6 +57,7 @@ while True:
     # Get rid of fill
     ri.remove()
     rr.remove()
+    rx.remove()
 
-tellme('All Done!')
+tellme("Appuyer sur 'q' pour quitter")
 plt.show()
