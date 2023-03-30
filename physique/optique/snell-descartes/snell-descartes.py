@@ -1,8 +1,15 @@
 #! /bin/python3
-import time
-# import numpy as np
+"""Refraction de la lumière
+
+Ce script permet de tracer les rayons lumineux incident, réfléchi et réfracté
+selon l'indice de réfraction de deux milieux.
+
+@author: E. Machefer <evan.machefer@ac-dijon.fr>
+@project: pyAtSchool  <https://github.com/emachefer/pyAtSchool>
+@license: GPL-3.0
+"""
+
 import matplotlib.pyplot as plt
-from matplotlib.widgets import TextBox
 from math import cos, sin, asin, atan, fabs, pi
 
 to_deg = lambda x : x * 180./pi
