@@ -12,9 +12,11 @@ selon l'indice de réfraction de deux milieux.
 import matplotlib.pyplot as plt
 from math import cos, sin, asin, atan, fabs, pi
 
+# Fonctions permettant la conversion des angles
 to_deg = lambda x : x * 180./pi
 to_rad = lambda x : x * pi / 180.
 
+# Fonction affichant sur la console et le graphique
 def tellme(s):
     print(s)
     plt.title(s, fontsize=16)
@@ -42,22 +44,34 @@ while True:
     x, y = plt.ginput(1, timeout=-1)[0]
     tellme("Source à ({}, {})".format(x,y))
 
-    if y < 0:
-        tellme("Pas encore pris en compte")
-        continue
-
     # Angles incident et réfracté
-    θi = atan(x/fabs(y))
-    θr = asin(n1*sin(θi)/n2)
+    θi = atan(x/y)
+    ni = n1 if y > 0 else n2
+    nr = n2 if y > 0 else n1
 
-    tellme('θi = {:.2f} ; θr = {:.2f}'.format(to_deg(θi), to_deg(θr)))
+    θr = 0
+    if ni*sin(θi)/nr > 1 :
+        θr = pi/2
+    elif ni*sin(θi)/nr < -1 :
+        θr = -pi/2
+    else :
+        θr = asin(ni*sin(θi)/nr)
 
+    print('θi = {:.2f} ; θr = {:.2f}'.format(to_deg(θi), to_deg(θr)))
+
+    # Tracer du rayon incident et du rayon réfléchi
     ri = plt.arrow(0, 0, l*x, l*y, color='r', label="Rayon incident")
-    rr = plt.arrow(0, 0, -l*sin(θr), -l*cos(θr), color='g', label="Rayon réfracté")
     rx = plt.arrow(0,0, -l*x, l*y, color='b', label="Rayon réfléchi")
 
+    # Coordonnées et tracer pour le rayon réfracté
+    xr = -l*sin(θr) if y > 0 else l*sin(θr)
+    yr = -l*cos(θr) if y > 0 else l*cos(θr)
+    rr = plt.arrow(0, 0, xr, yr, color='g', label="Rayon réfracté")
+
+    # Affiche les légendes
     ax.legend()
 
+    tellme("Cliquer pour recommencer\n Ou appuyer sur une touche pour continuer")
     if plt.waitforbuttonpress():
         break
 
