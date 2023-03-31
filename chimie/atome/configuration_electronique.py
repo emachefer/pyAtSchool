@@ -43,9 +43,11 @@ while nbEl > 0:
         nbEl -= nbElCouche
 
 # Pour l'affichage en fin de script
+disp = {1:"¹", 2:"²", 3:"³", 4:"⁴", 5:"⁵", 6:"⁶"}
 for couche in configuration:
     if (configuration[couche] != 0):
-        print("{}^{}".format(couche, configuration[couche]), end=" ")
+        n = configuration[couche] # Nombre d'électrons dans la couche
+        print("{}{}".format(couche, disp[n]), end=" ")
     else:
         break
 print("")
