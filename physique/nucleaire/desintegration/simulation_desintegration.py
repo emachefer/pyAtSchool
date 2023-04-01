@@ -7,22 +7,20 @@ Ce script permet de simuler les désintégrations nucléaires.
 @project : pyAtSchool <https://github.com/emachefer/pyAtSchool>
 @license : GPL-3.0
 """
-
-
 from matplotlib import pyplot as plt
-import numpy as np
+from math import exp
 import random
 
 
 # Initialisation des valeurs
 try:
     N0    = float(input("Nombre initial de noyaux : "))
-    proba = float(input("Probabilite de desintegration (entre 0 et 1) : "))/100.
+    proba = float(input("Probabilite de desintegration (en pourcentage) : "))/100.
     if (proba > 1 or proba < 0):
         raise()
     pas   = int(input("Nombre de lancer par essais ({}/{}) : ".format(N0, N0/10)))
 except:
-    print("[ERREUR] Les valeurs renseignées sont invalides!")
+    print("[ERREUR] Les valeurs renseignées sont invalides !")
     exit()
 
 # Un noyau atomique a une probabilité de désintégration
@@ -46,7 +44,7 @@ nombreDeLance = 0
 plt.ion()
 plt.figure()
 plt.show()
-plt.ylim(0, N0)
+plt.ylim(0, N0+1)
 while(noyauxRestants > 0):
     for lancer in range (pas):
         nombreDeLance += 1
@@ -56,6 +54,11 @@ while(noyauxRestants > 0):
     plt.title("{} noyaux restants".format(noyauxRestants))
     plt.plot(temps, listeNoyaux, 'b')
     plt.pause(0.1)
+
+
+f = [N0*exp(-temps[i]*proba) for i in range(len(temps))]
+plt.plot(temps,f,'r', label="Modélisation")
+plt.legend()
 
 plt.title("Cliquer pour quitter, temps écoulé {}".format(temps[-1]))
 plt.waitforbuttonpress()
