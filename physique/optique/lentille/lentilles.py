@@ -47,6 +47,7 @@ def traceRayon(x1, y1, x2, y2, x3='NaN', y3='NaN', couleur='r'):
     """
     ddx = (x2 - x1)/2
     ddy = (y2 - y1)/2
+    largeur = 0.01*hl
     plt.arrow(x1, y1, ddx, ddy, color=couleur, width=largeur, head_width=0.1*hl, length_includes_head= True)
     plt.arrow(x1+ddx, y1+ddy, ddx, ddy, width=largeur, color=couleur)
     if x3 != 'NaN' and y3 != 'NaN':
@@ -57,10 +58,7 @@ def traceRayon(x1, y1, x2, y2, x3='NaN', y3='NaN', couleur='r'):
 
 
 def dessine(OA, AB, OAp, ABp):
-    hl = 1.2 * AB if abs(AB) > abs(ABp) else 1.2 * ABp # Hauteur de la lentille
     fig = plt.figure()
-
-    largeur = 0.001*hl
 
     plt.arrow(0, hl, 0, -2*hl) # Lentille
 
@@ -91,5 +89,9 @@ OAp = conjugaison(OA,f)
 ABp = image(OA, OAp, AB)
 
 print("OA' = {:.2f} cm; A'B' = {:.2f} {}".format(OAp, ABp, unit))
+
+hl = 1.2 * AB if abs(AB) > abs(ABp) else 1.2 * ABp # Hauteur de la lentille
+largeur = 0.001*hl
+
 if input("Tracer [Y/N] ? ").upper() == 'Y':
     dessine(OA, AB, OAp, ABp)

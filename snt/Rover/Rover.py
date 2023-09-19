@@ -2,6 +2,9 @@ import turtle
 import random as rd
 import time
 
+import os
+
+
 WIDTH  = 600
 HEIGHT = 800
 
@@ -59,14 +62,21 @@ def start():
         print("Erreur inattendue, recommencer.")
     return PX, PY, TIC
 
+
+######### Début du programme #########
 if __name__ == "__main__":
+    fdir = os.path.dirname(__file__)
     start()
 
     win = gagne()
     while(win == False):
         fname = input("Entrer le nom du fichier : ")
+        if fname == "":
+            exit()
 
-        with open(fname) as finput:
+        fpath = fdir + "/" + fname
+        with open(fpath) as finput:
+            print("Openning : '{}'".format(fpath))
             for line in finput:
                 exec(line)
                 win = gagne(True)
@@ -75,4 +85,3 @@ if __name__ == "__main__":
             else:
                 continue
             break
-
